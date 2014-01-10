@@ -1,0 +1,15 @@
+2013/12/18 17:44:10 [error] [php] file_get_contents(okru.ru) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory (Z:\home\toster\www\protected\extensions\DOMParser\SimpleHTMLDOM.php:85)
+Stack trace:
+#0 Z:\home\toster\www\protected\controllers\SiteController.php(20): FormPage->SearchForm()
+#1 Z:\home\toster\www\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 Z:\home\toster\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 Z:\home\toster\www\framework\web\CController.php(286): SiteController->runAction()
+#4 Z:\home\toster\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 Z:\home\toster\www\framework\web\CWebApplication.php(282): SiteController->run()
+#6 Z:\home\toster\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 Z:\home\toster\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 Z:\home\toster\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in Z:\home\toster\www\protected\extensions\DOMParser\SimpleHTMLDOM.php (85)
+in Z:\home\toster\www\protected\models\FormPage.php (9)
+in Z:\home\toster\www\protected\controllers\SiteController.php (20)
