@@ -16,9 +16,25 @@ class SiteController extends Controller
 	}
 	public function actionIndex()
 	{
-            $form_page = new FormPage;
-            //$forms = $form_page->SearchForm('http://okru.ru');
-            $forms = $form_page->SearchForm('http://zymios-spb-test-2.new-tone.ru/');
+            $resourсe = new Resource;
+            $resourсe->setHref('http://okru.ru');
+            if($resourсe->CheckHref())
+            {
+                $hrefs = $resourсe->getAllHref();
+                if($hrefs !== false)
+                {
+                    foreach ($hrefs as $href)
+                    {
+                        $form = new Form;
+                        $form->setHref($href);
+                        $form->PickUp();
+                    }
+                }
+            }
+            if($forms_resourсe !== false)
+            {
+                //*далее бомбеж 
+            }
             echo '<br><br><br>end<br>';
             die;
             $this->render('index');
