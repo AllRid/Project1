@@ -16,6 +16,10 @@ class SiteController extends Controller
 	}
 	public function actionIndex()
 	{
+            $this->render('index');
+	}
+        public function actionHereGoes()
+	{
             $resourсe = new Resource;
             $resourсe->setHref('http://okru.ru');
             if($resourсe->CheckHref())
@@ -27,15 +31,11 @@ class SiteController extends Controller
                     {
                         $form = new Form;
                         $form->setHref($href);
-                        $form->PickUp();
+                        $forms = $form->PickUp();
                     }
                 }
             }
-            if($forms_resourсe !== false)
-            {
-                //*далее бомбеж 
-            }
-            echo '<br><br><br>end<br>';
+            MyDebug::pre($forms);
             die;
             $this->render('index');
 	}
