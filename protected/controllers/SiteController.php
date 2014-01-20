@@ -18,27 +18,6 @@ class SiteController extends Controller
 	{
             $this->render('index');
 	}
-        public function actionHereGoes()
-	{
-            $resourсe = new Resource;
-            $resourсe->setHref('http://okru.ru');
-            if($resourсe->CheckHref())
-            {
-                $hrefs = $resourсe->getAllHref();
-                if($hrefs !== false)
-                {
-                    foreach ($hrefs as $href)
-                    {
-                        $form = new Form;
-                        $form->setHref($href);
-                        $forms = $form->PickUp();
-                    }
-                }
-            }
-            MyDebug::pre($forms);
-            die;
-            $this->render('index');
-	}
 	public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)

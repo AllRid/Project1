@@ -14,6 +14,14 @@ class Form
     {
         return $this->action;
     }
+    public function setAction($action)
+    {
+        $this->action = $action;
+    }
+    public function setInputs($inputs)
+    {
+        $this->inputs = $inputs;
+    }
     public function PickUp()
     {
         $result = false;
@@ -21,31 +29,35 @@ class Form
         $page = $simpleHtml->file_get_html($this->href);
         $this->page = $page;
         $forms = $page->find('form');
-        foreach ($forms as $form)
+        foreach ($forms as $working_form)
         {
-            $action = $this->DefinitionAction($form);
+            $form = new Form;
+            $action = $form->DefinitionAction($working_form, $this->href);
             if($action !== false)
             {
-                $this->action = $action;
+                $form->setAction($action);
             }
-            $inputs = $this->DefinitionInputs($form);
+            $inputs = $form->DefinitionInputs($working_form);
             if($inputs !== false)
             {
-                $this->inputs = $inputs;
+                $form->setInputs($inputs);
             }
-            if($this->CheckSuitability())
+            if($form->CheckSuitability())
             {
-                $result[] = $this;
+                $result[] = $form;
             }
         }
         return $result;
     }
-    function DefinitionAction($form)
+    public function DefinitionAction($form, $href = null)
     {
         $result = false;
         if($form->action == '')
         {
-            $result = $this->href;
+            if($href !== null)
+            {
+                $result = $href;
+            }
         }
         else
         {
@@ -53,7 +65,7 @@ class Form
         }
         return $result;
     }
-    function DefinitionInputs($form)
+    public function DefinitionInputs($form)
     {
         $result = false;
         $input = new Input;
@@ -65,7 +77,7 @@ class Form
         }
         return $result;
     }
-    function CheckSuitability()
+    public function CheckSuitability()
     {
         $result = false;
         if($this->action != '')
