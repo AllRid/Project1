@@ -22,10 +22,9 @@ class ResourceController extends Controller
     }
      public function actionHereGoes()
 	{
-            flush();
             $resourсe = new Resource;
-            //$resourсe->setHref('http://okru.ru');
-            $resourсe->setHref('http://zymios-spb-test-2.new-tone.ru');
+            $resourсe->setHref('http://okru.ru');
+            //$resourсe->setHref('http://zymios-spb-test-2.new-tone.ru');
             if($resourсe->CheckHref())
             {
                 $hrefs = $resourсe->getAllHref();
@@ -33,9 +32,9 @@ class ResourceController extends Controller
                 {
                     foreach ($hrefs as $href)
                     {
-                        $form = new Form;
-                        $form->setHref($href);
-                        $forms = $form->PickUp();
+                        $form_parser = new FormParser;
+                        $form_parser->setHref($href);
+                        $forms = $form_parser->PickUpForms();
                     }
                 }
             }
