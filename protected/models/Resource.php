@@ -10,11 +10,6 @@ class Resource
     {
         $this->href = $href;
     }
-    public function CheckHref()
-    {
-        //проверка ссылки на валидность
-        return true;
-    }
     public function getAllHref()
     {
         $result = false;

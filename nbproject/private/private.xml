@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/WebServers/home/toster/www/protected/controllers/ResourceController.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/models/Input.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/tests/WebTestCase.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/models/Form.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/models/Page.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/tests/unit/BBCodeTest.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/models/Link.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/config/test.php</file>
+            <file>file:/C:/WebServers/home/toster/www/index-test.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/tests/bootstrap.php</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/tests/phpunit.xml</file>
+            <file>file:/C:/WebServers/home/toster/www/protected/components/EBBCode.php</file>
+        </group>
     </open-files>
 </project-private>
