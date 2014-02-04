@@ -49,7 +49,7 @@ class CoupontTest extends CDbTestCase
         {
                 $cm = new CoupontManager();
                 $this->assertTrue($cm->registerCoupon($_GET['existing_code']));
-                $this->assertFalse((boolean)Coupon::model()->findByPk($_GET['existing_code']));
+                $this->assertFalse((boolean)Coupont::model()->findByPk($_GET['existing_code']));
         }
 
         public function testCodeNotFound()

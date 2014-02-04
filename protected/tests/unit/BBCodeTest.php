@@ -6,7 +6,7 @@ class BBCodeTest extends CDbTestCase
             $bb = new EBBCode();
             return $bb->process($bbCode);
     }
-
+    
     function testSingleTags()
     {
             $this->assertEquals('<strong>test</strong>', $this->process('[b]test[/b]'));

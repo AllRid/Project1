@@ -33,29 +33,11 @@ class Page
                 foreach ($forms as $working_form)
                 {
                     $form = new Form;
-
+                    $form->setDOMForm($working_form);
+                    
                 }
             }
         }
-        return $result;
-    }
-    function DetermineActionForm($form)
-    {
-        $result = false;
-        if($form->action == '')
-        {
-            $result = $this->getHref();
-        }
-        else
-        {
-            $result = $form->action;
-        }
-        return $result;
-    }
-    function DetermineInputsForm($form)
-    {
-        $result = false;
-        
         return $result;
     }
 }
